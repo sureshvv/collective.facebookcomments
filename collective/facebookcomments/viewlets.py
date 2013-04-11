@@ -26,7 +26,7 @@ class FacebookComments(BrowserView):
         pass
 
     def available(self):
-        return self.context.portal_type in self.settings.portal_types
+        return self.settings.portal_types and self.context.portal_type in self.settings.portal_types
 
     render = ViewPageTemplateFile("facebook_comments.pt")
 
