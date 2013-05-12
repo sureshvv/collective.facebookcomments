@@ -28,6 +28,13 @@ class FacebookComments(BrowserView):
     def available(self):
         return self.settings.portal_types and self.context.portal_type in self.settings.portal_types
 
+    def url(self):
+        url1 = self.context.absolute_url()
+        if not url1.endswith('/view'):
+            url1 += '/view'
+        url1 = url1.replace('image_', 'leadImage_')
+        return url1
+
     render = ViewPageTemplateFile("facebook_comments.pt")
 
 class Metatag(BrowserView):
