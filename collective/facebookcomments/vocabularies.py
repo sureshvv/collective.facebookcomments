@@ -12,7 +12,7 @@ __author__ = "Mikko Ohtamaa <mikko@mfabrik.com>"
 __docformat__ = "epytext"
 
 from Acquisition import aq_inner
-from zope.app.component.hooks import getSite
+from zope.site.hooks import getSite
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from Products.CMFCore.utils import getToolByName
 
